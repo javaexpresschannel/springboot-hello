@@ -51,7 +51,7 @@ pipeline {
         stage('Docker deploy'){
             steps {
                 sh 'docker stop $(docker ps -aq)'
-                sh 'docker run -itd -p --name javaxpress_springboot 8081:8080 anvbhaskar/docker_jenkins_springboot:${BUILD_NUMBER}'
+                sh 'docker run -itd -p  8081:8080 anvbhaskar/docker_jenkins_springboot:${BUILD_NUMBER}'
             }
         }
 
