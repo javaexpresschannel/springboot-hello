@@ -18,7 +18,7 @@ pipeline {
 
         stage('Build Docker image'){
             steps {
-                sh 'docker stop $(docker ps -aq)'
+              
                 sh 'docker build -t  anvbhaskar/docker_jenkins_springboot:${BUILD_NUMBER} .'
             }
         }
