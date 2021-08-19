@@ -18,7 +18,6 @@ pipeline {
 
         stage('Build Docker image'){
             steps {
-              
                 sh 'docker build -t  anvbhaskar/docker_jenkins_springboot:${BUILD_NUMBER} .'
             }
         }
@@ -27,7 +26,7 @@ pipeline {
             
             steps {
                  withCredentials([string(credentialsId: 'DockerId', variable: 'Dockerpwd')]) {
-                    sh "docker login -u anvbhaskar -p ${Dockerpwd}"
+                    sh "docker login -u 7395963333 -p ${Dockerpwd}"
                 }
             }                
         }
