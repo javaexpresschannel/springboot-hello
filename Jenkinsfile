@@ -1,11 +1,15 @@
 pipeline {
     agent any 
+    tools {
+        maven "MAVEN"
+    
+    }
     stages {
         stage('Compile and Clean') { 
             steps {
                 // Run Maven on a Unix agent.
-                mvnHome = tool name: '3.6.3', type: 'maven'
-                sh "${mvnHome}/bin/mvn -version"
+                echo "PATH = ${M2_HOME}/bin:${PATH}"
+                echo "M2_HOME = /opt/maven"
                 sh "mvn clean compile"
             }
         }
