@@ -3,6 +3,9 @@ pipeline {
     stages {
         stage('Compile and Clean') { 
             steps {
+                // Run Maven on a Unix agent.
+                def mvnHome = tool name: '3.6.3', type: 'maven'
+                sh "${mvnHome}/bin/mvn -version"
                 sh "mvn clean compile"
             }
         }
