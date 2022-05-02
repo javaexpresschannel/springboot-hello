@@ -19,14 +19,11 @@ pipeline {
             }
         }
         stage('Build Docker image'){
-            agent {
-        docker {
-          image 'node:7-alpine'
-          args 'docker build -t  anvbhaskar/docker_jenkins_springboot:${BUILD_NUMBER} .' // list any args
-        } }
+          
             steps {
+                echo "Hello Java Express"
                 sh 'ls'
-                //sh 'docker build -t  anvbhaskar/docker_jenkins_springboot:${BUILD_NUMBER} .'
+                sh 'docker build -t  anvbhaskar/docker_jenkins_springboot:${BUILD_NUMBER} .'
             }
         }
         stage('Docker Login'){
