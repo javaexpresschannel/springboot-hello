@@ -23,7 +23,7 @@ pipeline {
         docker {
           image 'node:7-alpine'
           args 'docker build -t  anvbhaskar/docker_jenkins_springboot:${BUILD_NUMBER} .' // list any args
-        }
+        } }
             steps {
                 sh 'ls'
                 //sh 'docker build -t  anvbhaskar/docker_jenkins_springboot:${BUILD_NUMBER} .'
